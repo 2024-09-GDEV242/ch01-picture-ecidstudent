@@ -16,6 +16,7 @@ public class Picture
     private Triangle hill1;
     private Triangle hill2;
     private Circle sun;
+    private Person guy;
     private boolean drawn;
 
     /**
@@ -23,6 +24,7 @@ public class Picture
      */
     public Picture()
     {
+        guy = new Person();
         wall = new Square();
         window = new Square();
         hill1 = new Triangle();
@@ -37,14 +39,18 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            hill1.changeSize(80, 300);
-            hill1.moveHorizontal(-20);
-            hill1.moveVertical(20);
+            guy.moveHorizontal(-30);
+            guy.moveVertical(-90);
+            guy.makeVisible();
+            
+            hill1.changeSize(100, 300);
+            hill1.moveHorizontal(20);
+            hill1.moveVertical(-60);
             hill1.makeVisible();
             
-            hill2.changeSize(150, 400);
-            hill2.moveHorizontal(130);
-            hill2.moveVertical(-60);
+            hill2.changeSize(100, 300);
+            hill2.moveHorizontal(100);
+            hill2.moveVertical(-50);
             hill2.makeVisible();
             
             wall.moveHorizontal(-140);
